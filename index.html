@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="хартвеллиха. сестра хартвелла.">
+  <meta name="theme-color" content="#08080a">
+  <meta property="og:title" content="хартвеллиха">
+  <meta property="og:description" content="alt till death">
+  <meta property="og:image" content="https://files.catbox.moe/tv68zx.jpg">
+  <title>хартвеллиха</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🖤</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Unbounded:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursor-ring" aria-hidden="true"></div>
+
+  <div class="grid-bg" aria-hidden="true"></div>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="scanlines" aria-hidden="true"></div>
+  <div class="glow glow--tl" aria-hidden="true"></div>
+  <div class="glow glow--br" aria-hidden="true"></div>
+  <div class="glow glow--mid" aria-hidden="true"></div>
+
+  <header class="top">
+    <a href="#" class="logo">хартвеллиха<span class="logo-dot">.</span></a>
+    <nav class="nav">
+      <a href="#about">я</a>
+      <a href="#langs">языки</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="hero__left reveal">
+        <p class="hero__tag"><span class="blink">_</span> online · не сплю · существую</p>
+        <h1 class="hero__title">
+          хартвеллиха
+        </h1>
+        <p class="hero__sub">сестра хартвелла</p>
+        <p class="hero__desc">
+          кодер из вредности. c++ python c# и прочая дичь.
+          иногда пишу нормально. чаще нет.
+        </p>
+        <div class="hero__chips">
+          <span class="chip">alt till death</span>
+          <span class="chip chip--dim">не трогай</span>
+        </div>
+      </div>
+
+      <div class="hero__right reveal reveal--d1">
+        <div class="avatar-wrap">
+          <div class="avatar-ring"></div>
+          <div class="avatar-ring avatar-ring--2"></div>
+          <img
+            src="https://files.catbox.moe/tv68zx.jpg"
+            alt="хартвеллиха"
+            class="avatar"
+            width="300"
+            height="300"
+            loading="eager"
+          >
+          <div class="avatar-badge">
+            <span class="pulse"></span>
+            alive
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker__track">
+        <span>C++</span><span>◆</span><span>Python</span><span>◆</span><span>C#</span><span>◆</span>
+        <span>хартвеллиха</span><span>◆</span><span>alt</span><span>◆</span><span>bash</span><span>◆</span>
+        <span>SQL</span><span>◆</span><span>git</span><span>◆</span><span>не трогай</span><span>◆</span>
+        <span>C++</span><span>◆</span><span>Python</span><span>◆</span><span>C#</span><span>◆</span>
+        <span>хартвеллиха</span><span>◆</span><span>alt</span><span>◆</span><span>bash</span><span>◆</span>
+        <span>SQL</span><span>◆</span><span>git</span><span>◆</span><span>не трогай</span><span>◆</span>
+      </div>
+    </div>
+
+    <section id="about" class="section">
+      <div class="section-head reveal">
+        <span class="section-num">01</span>
+        <h2 class="section-title">обо мне</h2>
+      </div>
+
+      <div class="about-card reveal">
+        <div class="about-card__corner about-card__corner--tl"></div>
+        <div class="about-card__corner about-card__corner--br"></div>
+
+        <p class="about-card__name">хартвеллиха <span class="about-card__dot">•</span> сестра хартвелла</p>
+
+        <div class="about-card__body">
+          <p>родилась в 3 часа ночи под звук дрели и чьего-то плача</p>
+          <p>брат говорит я проблема. я говорю он просто завидует</p>
+          <p>учусь на кого-то, работаю никем, существую из вредности</p>
+          <p class="about-card__gap"></p>
+          <p>если ты мне написал — ты либо заблудился либо мазохист</p>
+          <p>отвечу. но не факт что захочешь чтобы я отвечала</p>
+        </div>
+
+        <div class="about-card__tags">
+          <span>🖤 alt till death</span>
+          <span>💀 не трогай меня</span>
+          <span>🤡 ты уже тронул</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="langs" class="section">
+      <div class="section-head reveal">
+        <span class="section-num">02</span>
+        <h2 class="section-title">языки</h2>
+      </div>
+
+      <div class="lang-grid">
+
+        <article class="lang-panel lang-panel--cpp reveal">
+          <div class="lang-panel__bg">++</div>
+          <div class="lang-panel__content">
+            <span class="lang-panel__label">основа</span>
+            <h3 class="lang-panel__name">C++</h3>
+            <p class="lang-panel__desc">память, боль, скорость</p>
+          </div>
+          <div class="lang-panel__shine"></div>
+        </article>
+
+        <article class="lang-panel lang-panel--py reveal reveal--d1">
+          <div class="lang-panel__bg">py</div>
+          <div class="lang-panel__content">
+            <span class="lang-panel__label">лень</span>
+            <h3 class="lang-panel__name">Python</h3>
+            <p class="lang-panel__desc">быстро и грязно</p>
+          </div>
+          <div class="lang-panel__shine"></div>
+        </article>
+
+        <article class="lang-panel lang-panel--cs reveal reveal--d2">
+          <div class="lang-panel__bg">C#</div>
+          <div class="lang-panel__content">
+            <span class="lang-panel__label">gui</span>
+            <h3 class="lang-panel__name">C#</h3>
+            <p class="lang-panel__desc">кнопки без страданий</p>
+          </div>
+          <div class="lang-panel__shine"></div>
+        </article>
+
+        <article class="lang-panel lang-panel--bash reveal">
+          <div class="lang-panel__bg">$_</div>
+          <div class="lang-panel__content">
+            <span class="lang-panel__label">shell</span>
+            <h3 class="lang-panel__name">bash</h3>
+            <p class="lang-panel__desc">одна строка решает</p>
+          </div>
+          <div class="lang-panel__shine"></div>
+        </article>
+
+        <article class="lang-panel lang-panel--sql reveal reveal--d1">
+          <div class="lang-panel__bg">SQL</div>
+          <div class="lang-panel__content">
+            <span class="lang-panel__label">data</span>
+            <h3 class="lang-panel__name">SQL</h3>
+            <p class="lang-panel__desc">select * from хаос</p>
+          </div>
+          <div class="lang-panel__shine"></div>
+        </article>
+
+        <article class="lang-panel lang-panel--web reveal reveal--d2">
+          <div class="lang-panel__bg">&lt;/&gt;</div>
+          <div class="lang-panel__content">
+            <span class="lang-panel__label">web</span>
+            <h3 class="lang-panel__name">HTML/CSS</h3>
+            <p class="lang-panel__desc">когда надо красиво</p>
+          </div>
+          <div class="lang-panel__shine"></div>
+        </article>
+
+        <article class="lang-panel lang-panel--git lang-panel--wide reveal">
+          <div class="lang-panel__bg">git</div>
+          <div class="lang-panel__content">
+            <span class="lang-panel__label">версии</span>
+            <h3 class="lang-panel__name">git</h3>
+            <p class="lang-panel__desc">commit. push. молиться.</p>
+          </div>
+          <div class="lang-panel__shine"></div>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    const cur = document.getElementById('cursor');
+    const ring = document.getElementById('cursor-ring');
+    let mx = 0, my = 0, rx = 0, ry = 0;
+
+    document.addEventListener('mousemove', e => {
+      mx = e.clientX;
+      my = e.clientY;
+      cur.style.transform = `translate(${mx}px, ${my}px)`;
+    });
+
+    function animRing() {
+      rx += (mx - rx) * 0.12;
+      ry += (my - ry) * 0.12;
+      ring.style.transform = `translate(${rx}px, ${ry}px)`;
+      requestAnimationFrame(animRing);
+    }
+    animRing();
+
+    document.querySelectorAll('a, button, .lang-panel').forEach(el => {
+      el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
+      el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+    });
+  </script>
+
+</body>
+</html>
