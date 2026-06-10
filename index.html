@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="хартвеллиха. сестра хартвелла.">
-  <meta name="theme-color" content="#08080a">
+  <meta name="theme-color" content="#0a0708">
   <meta property="og:title" content="хартвеллиха">
   <meta property="og:description" content="alt till death">
   <meta property="og:image" content="https://files.catbox.moe/tv68zx.jpg">
@@ -12,11 +12,13 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🖤</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Unbounded:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Unbounded:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <noscript><style>.reveal{opacity:1;transform:none}.caret{display:none}</style></noscript>
 </head>
 <body>
 
+  <div class="progress" id="progress" aria-hidden="true"></div>
   <div class="cursor" id="cursor" aria-hidden="true"></div>
   <div class="cursor-ring" id="cursor-ring" aria-hidden="true"></div>
 
@@ -29,21 +31,20 @@
 
   <header class="top">
     <a href="#" class="logo">хартвеллиха<span class="logo-dot">.</span></a>
-    <nav class="nav">
-      <a href="#about">я</a>
-      <a href="#langs">языки</a>
-    </nav>
+    <div class="top__right">
+      <nav class="nav">
+      </nav>
+      <span class="clock" id="clock">00:00:00</span>
+    </div>
   </header>
 
   <main>
 
     <section class="hero">
       <div class="hero__left reveal">
-        <p class="hero__tag"><span class="blink">_</span> online · не сплю · существую</p>
-        <h1 class="hero__title">
-          хартвеллиха
-        </h1>
-        <p class="hero__sub">сестра хартвелла</p>
+        <p class="hero__tag"><span class="blink">▮</span> <span class="ok">online</span> · не сплю · существую</p>
+        <h1 class="glitch" data-text="хартвеллиха">хартвеллиха</h1>
+        <p class="hero__sub"><span id="typed"></span><span class="caret"></span></p>
         <p class="hero__desc">
           кодер из вредности. c++ python c# и прочая дичь.
           иногда пишу нормально. чаще нет.
@@ -56,8 +57,6 @@
 
       <div class="hero__right reveal reveal--d1">
         <div class="avatar-wrap">
-          <div class="avatar-ring"></div>
-          <div class="avatar-ring avatar-ring--2"></div>
           <img
             src="https://files.catbox.moe/tv68zx.jpg"
             alt="хартвеллиха"
@@ -66,6 +65,8 @@
             height="300"
             loading="eager"
           >
+          <div class="avatar-frame" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+          <div class="avatar-scan" aria-hidden="true"></div>
           <div class="avatar-badge">
             <span class="pulse"></span>
             alive
@@ -85,38 +86,72 @@
       </div>
     </div>
 
+    <section id="terminal" class="section">
+      <div class="section-head reveal">
+        <span class="section-eyebrow">ssh хартвеллиха@github</span>
+        <h2 class="section-title">терминал</h2>
+      </div>
+
+      <div class="win term reveal">
+        <div class="win__bar">
+          <span class="win__dot win__dot--r"></span>
+          <span class="win__dot win__dot--y"></span>
+          <span class="win__dot win__dot--g"></span>
+          <span class="win__title">хартвеллиха@github: ~</span>
+        </div>
+        <div class="term__body" id="term-body">
+          <div class="term__out" id="term-out" aria-live="polite"></div>
+          <div class="term__inputline">
+            <span class="t-prompt">хартвеллиха@github:~$</span>
+            <input type="text" class="term__input" id="term-input" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="терминал" maxlength="60">
+          </div>
+          <p class="term__hint">подсказка: help. или не пиши ничего, мне всё равно</p>
+        </div>
+      </div>
+    </section>
+
     <section id="about" class="section">
       <div class="section-head reveal">
-        <span class="section-num">01</span>
+        <span class="section-eyebrow">cat about.cpp</span>
         <h2 class="section-title">обо мне</h2>
       </div>
 
-      <div class="about-card reveal">
-        <div class="about-card__corner about-card__corner--tl"></div>
-        <div class="about-card__corner about-card__corner--br"></div>
-
-        <p class="about-card__name">хартвеллиха <span class="about-card__dot">•</span> сестра хартвелла</p>
-
-        <div class="about-card__body">
-          <p>родилась в 3 часа ночи под звук дрели и чьего-то плача</p>
-          <p>брат говорит я проблема. я говорю он просто завидует</p>
-          <p>учусь на кого-то, работаю никем, существую из вредности</p>
-          <p class="about-card__gap"></p>
-          <p>если ты мне написал — ты либо заблудился либо мазохист</p>
-          <p>отвечу. но не факт что захочешь чтобы я отвечала</p>
+      <div class="win code reveal">
+        <div class="win__bar">
+          <span class="win__dot win__dot--r"></span>
+          <span class="win__dot win__dot--y"></span>
+          <span class="win__dot win__dot--g"></span>
+          <span class="win__title">about.cpp — хартвеллиха</span>
         </div>
-
-        <div class="about-card__tags">
-          <span>🖤 alt till death</span>
-          <span>💀 не трогай меня</span>
-          <span>🤡 ты уже тронул</span>
+        <div class="code__body">
+<span class="code-line"><span class="k">struct</span> хартвеллиха <span class="p">{</span></span>
+<span class="code-line">    <span class="k">string</span> статус   <span class="p">=</span> <span class="s">"существую из вредности"</span><span class="p">;</span></span>
+<span class="code-line">    <span class="k">string</span> рождение <span class="p">=</span> <span class="s">"3 ночи, дрель, чей-то плач"</span><span class="p">;</span></span>
+<span class="code-line">    <span class="k">string</span> учёба    <span class="p">=</span> <span class="s">"на кого-то"</span><span class="p">;</span></span>
+<span class="code-line">    <span class="k">string</span> работа   <span class="p">=</span> <span class="s">"никем"</span><span class="p">;</span></span>
+<span class="code-line">    <span class="k">string</span> брат     <span class="p">=</span> <span class="s">"говорит что я проблема"</span><span class="p">;</span></span>
+<span class="code-line">    <span class="k">string</span> правда   <span class="p">=</span> <span class="s">"он просто завидует"</span><span class="p">;</span></span>
+<span class="code-line">    <span class="k">int</span>    сон      <span class="p">=</span> <span class="n">0</span><span class="p">;</span></span>
+<span class="code-line">    <span class="k">bool</span>   совесть  <span class="p">=</span> <span class="k">false</span><span class="p">;</span></span>
+<span class="code-line"> </span>
+<span class="code-line">    <span class="k">string</span> <span class="f">ответить</span><span class="p">(</span><span class="k">string</span> ты<span class="p">) {</span></span>
+<span class="code-line">        <span class="k">if</span> <span class="p">(</span>ты <span class="p">==</span> <span class="s">"заблудился"</span><span class="p">)</span> <span class="k">return</span> <span class="s">"бывает"</span><span class="p">;</span></span>
+<span class="code-line">        <span class="k">return</span> <span class="s">"значит мазохист. уважаю"</span><span class="p">;</span></span>
+<span class="code-line">    <span class="p">}</span></span>
+<span class="code-line"><span class="p">};</span></span>
         </div>
+      </div>
+
+      <div class="about-tags reveal reveal--d1">
+        <span>🖤 alt till death</span>
+        <span>💀 не трогай меня</span>
+        <span>🤡 ты уже тронул</span>
       </div>
     </section>
 
     <section id="langs" class="section">
       <div class="section-head reveal">
-        <span class="section-num">02</span>
+        <span class="section-eyebrow">ls языки/</span>
         <h2 class="section-title">языки</h2>
       </div>
 
@@ -128,8 +163,8 @@
             <span class="lang-panel__label">основа</span>
             <h3 class="lang-panel__name">C++</h3>
             <p class="lang-panel__desc">память, боль, скорость</p>
+            <div class="lvl"><div class="lvl__bar"><i style="--w:87%"></i></div><span class="lvl__txt">боль 87%</span></div>
           </div>
-          <div class="lang-panel__shine"></div>
         </article>
 
         <article class="lang-panel lang-panel--py reveal reveal--d1">
@@ -138,8 +173,8 @@
             <span class="lang-panel__label">лень</span>
             <h3 class="lang-panel__name">Python</h3>
             <p class="lang-panel__desc">быстро и грязно</p>
+            <div class="lvl"><div class="lvl__bar"><i style="--w:95%"></i></div><span class="lvl__txt">лень 95%</span></div>
           </div>
-          <div class="lang-panel__shine"></div>
         </article>
 
         <article class="lang-panel lang-panel--cs reveal reveal--d2">
@@ -148,8 +183,8 @@
             <span class="lang-panel__label">gui</span>
             <h3 class="lang-panel__name">C#</h3>
             <p class="lang-panel__desc">кнопки без страданий</p>
+            <div class="lvl"><div class="lvl__bar"><i style="--w:72%"></i></div><span class="lvl__txt">кнопки 72%</span></div>
           </div>
-          <div class="lang-panel__shine"></div>
         </article>
 
         <article class="lang-panel lang-panel--bash reveal">
@@ -158,8 +193,8 @@
             <span class="lang-panel__label">shell</span>
             <h3 class="lang-panel__name">bash</h3>
             <p class="lang-panel__desc">одна строка решает</p>
+            <div class="lvl"><div class="lvl__bar"><i style="--w:80%"></i></div><span class="lvl__txt">пайпы 80%</span></div>
           </div>
-          <div class="lang-panel__shine"></div>
         </article>
 
         <article class="lang-panel lang-panel--sql reveal reveal--d1">
@@ -168,8 +203,8 @@
             <span class="lang-panel__label">data</span>
             <h3 class="lang-panel__name">SQL</h3>
             <p class="lang-panel__desc">select * from хаос</p>
+            <div class="lvl"><div class="lvl__bar"><i style="--w:75%"></i></div><span class="lvl__txt">джойны 75%</span></div>
           </div>
-          <div class="lang-panel__shine"></div>
         </article>
 
         <article class="lang-panel lang-panel--web reveal reveal--d2">
@@ -178,8 +213,8 @@
             <span class="lang-panel__label">web</span>
             <h3 class="lang-panel__name">HTML/CSS</h3>
             <p class="lang-panel__desc">когда надо красиво</p>
+            <div class="lvl"><div class="lvl__bar"><i style="--w:99%"></i></div><span class="lvl__txt">вкус 99%</span></div>
           </div>
-          <div class="lang-panel__shine"></div>
         </article>
 
         <article class="lang-panel lang-panel--git lang-panel--wide reveal">
@@ -188,38 +223,272 @@
             <span class="lang-panel__label">версии</span>
             <h3 class="lang-panel__name">git</h3>
             <p class="lang-panel__desc">commit. push. молиться.</p>
+            <div class="lvl"><div class="lvl__bar"><i style="--w:100%"></i></div><span class="lvl__txt">молитвы 100%</span></div>
           </div>
-          <div class="lang-panel__shine"></div>
         </article>
 
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head reveal">
+        <span class="section-eyebrow">uptime --human</span>
+        <h2 class="section-title">статистика</h2>
+      </div>
+
+      <div class="stats">
+        <div class="stat reveal">
+          <span class="stat__num" data-to="128640">0</span>
+          <span class="stat__label">строк написано</span>
+        </div>
+        <div class="stat reveal reveal--d1">
+          <span class="stat__num" data-to="131072">0</span>
+          <span class="stat__label">строк удалено</span>
+        </div>
+        <div class="stat reveal reveal--d1">
+          <span class="stat__num" data-from="8" data-to="0">8</span>
+          <span class="stat__label">часов сна сегодня</span>
+        </div>
+        <div class="stat reveal reveal--d2">
+          <span class="stat__num stat__num--vio">∞</span>
+          <span class="stat__label">багов создано</span>
+        </div>
       </div>
     </section>
 
   </main>
 
   <script>
+    const RM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const FINE = window.matchMedia('(pointer: fine)').matches;
+
     const cur = document.getElementById('cursor');
     const ring = document.getElementById('cursor-ring');
     let mx = 0, my = 0, rx = 0, ry = 0;
 
-    document.addEventListener('mousemove', e => {
-      mx = e.clientX;
-      my = e.clientY;
-      cur.style.transform = `translate(${mx}px, ${my}px)`;
-    });
+    if (FINE) {
+      document.addEventListener('mousemove', e => {
+        mx = e.clientX;
+        my = e.clientY;
+        cur.style.transform = `translate(${mx}px, ${my}px)`;
+      });
 
-    function animRing() {
-      rx += (mx - rx) * 0.12;
-      ry += (my - ry) * 0.12;
-      ring.style.transform = `translate(${rx}px, ${ry}px)`;
-      requestAnimationFrame(animRing);
+      (function animRing() {
+        rx += (mx - rx) * 0.12;
+        ry += (my - ry) * 0.12;
+        ring.style.transform = `translate(${rx}px, ${ry}px)`;
+        requestAnimationFrame(animRing);
+      })();
+
+      document.querySelectorAll('a, button, input, .lang-panel, .about-tags span').forEach(el => {
+        el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
+        el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+      });
     }
-    animRing();
 
-    document.querySelectorAll('a, button, .lang-panel').forEach(el => {
-      el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
-      el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+    const progress = document.getElementById('progress');
+    window.addEventListener('scroll', () => {
+      const h = document.documentElement;
+      const k = h.scrollTop / (h.scrollHeight - h.clientHeight || 1);
+      progress.style.width = (k * 100) + '%';
+    }, { passive: true });
+
+    const clock = document.getElementById('clock');
+    function tickClock() {
+      clock.textContent = new Date().toLocaleTimeString('ru-RU', { hour12: false });
+    }
+    tickClock();
+    setInterval(tickClock, 1000);
+
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(en => {
+        if (en.isIntersecting) {
+          en.target.classList.add('is-in');
+          io.unobserve(en.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    const typedEl = document.getElementById('typed');
+    const phrases = [
+      'сестра хартвелла',
+      'кодер из вредности',
+      'проблема (по версии брата)',
+      'alt till death'
+    ];
+
+    if (RM) {
+      typedEl.textContent = phrases[0];
+    } else {
+      let pi = 0, ci = 0, del = false;
+      (function typeLoop() {
+        const p = phrases[pi];
+        typedEl.textContent = p.slice(0, ci);
+        let wait = del ? 35 : 75;
+        if (!del && ci === p.length) { wait = 1800; del = true; }
+        else if (del && ci === 0) { del = false; pi = (pi + 1) % phrases.length; wait = 350; }
+        else ci += del ? -1 : 1;
+        setTimeout(typeLoop, wait);
+      })();
+    }
+
+    const out = document.getElementById('term-out');
+    const inp = document.getElementById('term-input');
+    const body = document.getElementById('term-body');
+    let busy = false;
+    const PROMPT = 'хартвеллиха@github:~$ ';
+
+    function addLine(cls) {
+      const d = document.createElement('div');
+      d.className = 't-line' + (cls ? ' t-line--' + cls : '');
+      out.appendChild(d);
+      out.scrollTop = out.scrollHeight;
+      return d;
+    }
+
+    function echo(cmd) {
+      const d = addLine();
+      const p = document.createElement('span');
+      p.className = 't-prompt';
+      p.textContent = PROMPT;
+      d.appendChild(p);
+      d.appendChild(document.createTextNode(cmd));
+    }
+
+    function typeOut(text, cls) {
+      return new Promise(res => {
+        const d = addLine(cls);
+        if (RM) { d.textContent = text; res(); return; }
+        let i = 0;
+        (function tick() {
+          d.textContent = text.slice(0, ++i);
+          out.scrollTop = out.scrollHeight;
+          if (i < text.length) setTimeout(tick, 12);
+          else res();
+        })();
+      });
+    }
+
+    async function printAll(lines) {
+      busy = true;
+      for (const [t, c] of lines) await typeOut(t, c);
+      busy = false;
+      out.scrollTop = out.scrollHeight;
+    }
+
+    const HELP = [
+      ['доступные команды:', 'dim'],
+      ['  whoami     кто это вообще', ''],
+      ['  языки      чем пишу', ''],
+      ['  брат       информация о нём', ''],
+      ['  время      который час', ''],
+      ['  clear      стереть всё', ''],
+      ['  exit       попробовать сбежать', ''],
+      ['остальное вводи на свой страх', 'dim']
+    ];
+
+    function respond(raw) {
+      const cmd = raw.toLowerCase().trim();
+      if (cmd === 'clear' || cmd === 'cls' || cmd === 'очисти') return 'CLEAR';
+      if (cmd === 'help' || cmd === 'помощь' || cmd === 'справка') return HELP;
+      if (cmd === 'whoami' || cmd === 'кто я' || cmd === 'кто ты' || cmd === 'ктоя')
+        return [['хартвеллиха. сестра хартвелла. этого достаточно', 'red']];
+      if (cmd === 'языки' || cmd === 'skills' || cmd === 'скилы' || cmd === 'ls')
+        return [['c++ · python · c# · bash · sql · html/css · git', ''], ['подробности ниже. листай', 'dim']];
+      if (cmd === 'брат' || cmd === 'hartwell' || cmd === 'хартвелл')
+        return [['говорит что я проблема', ''], ['он просто завидует', 'vio']];
+      if (cmd === 'время' || cmd === 'time' || cmd === 'date' || cmd === 'дата')
+        return [[new Date().toLocaleString('ru-RU'), 'ok']];
+      if (cmd === 'привет' || cmd === 'hi' || cmd === 'hello' || cmd === 'ку' || cmd === 'здарова')
+        return [['ну привет. чего надо', '']];
+      if (cmd === 'exit' || cmd === 'quit' || cmd === 'выход')
+        return [['отсюда нет выхода', 'red']];
+      if (cmd === 'хартвеллиха') return [['это я', '']];
+      if (cmd === 'не трогай') return [['поздно. ты уже в моём терминале', 'red']];
+      if (cmd === 'люблю тебя' || cmd === 'love')
+        return [['ошибка 403: доступ запрещён', 'red']];
+      if (cmd.startsWith('sudo')) return [['нет.', 'red']];
+      if (cmd.startsWith('rm')) return [['смело. но нет', 'red']];
+      if (cmd === '') return [];
+      return [['команда не найдена: ' + cmd, 'dim'], ['попробуй help', 'dim']];
+    }
+
+    inp.addEventListener('keydown', async e => {
+      if (e.key !== 'Enter' || busy) return;
+      const raw = inp.value;
+      inp.value = '';
+      echo(raw);
+      const r = respond(raw);
+      if (r === 'CLEAR') { out.innerHTML = ''; return; }
+      if (r.length) await printAll(r);
     });
+
+    body.addEventListener('click', e => {
+      if (e.target !== inp && window.getSelection().toString() === '') inp.focus();
+    });
+
+    const BOOT = [
+      ['загрузка ядра вредности ......... ok', 'ok'],
+      ['поиск совести ................... not found', 'red'],
+      ['подключение к брату ............. отказано', 'dim'],
+      ['статус: жива. к сожалению для вас', 'vio'],
+      ['введи help. если осмелишься', 'dim']
+    ];
+
+    let booted = false;
+    const termIo = new IntersectionObserver(entries => {
+      entries.forEach(en => {
+        if (en.isIntersecting && !booted) {
+          booted = true;
+          printAll(BOOT);
+          termIo.disconnect();
+        }
+      });
+    }, { threshold: 0.3 });
+    termIo.observe(document.getElementById('terminal'));
+
+    if (FINE && !RM) {
+      document.querySelectorAll('.lang-panel').forEach(p => {
+        p.addEventListener('mousemove', e => {
+          const r = p.getBoundingClientRect();
+          const x = (e.clientX - r.left) / r.width;
+          const y = (e.clientY - r.top) / r.height;
+          p.style.setProperty('--mx', (x * 100) + '%');
+          p.style.setProperty('--my', (y * 100) + '%');
+          p.style.transition = 'transform 60ms linear, border-color 0.35s, box-shadow 0.35s';
+          p.style.transform = `perspective(700px) rotateX(${(0.5 - y) * 5}deg) rotateY(${(x - 0.5) * 5}deg) translateY(-3px)`;
+        });
+        p.addEventListener('mouseleave', () => {
+          p.style.transition = 'transform 0.4s ease, border-color 0.35s, box-shadow 0.35s';
+          p.style.transform = '';
+        });
+      });
+    }
+
+    function animCount(el) {
+      const to = +el.dataset.to;
+      const from = +(el.dataset.from || 0);
+      if (RM) { el.textContent = to.toLocaleString('ru-RU'); return; }
+      const dur = 1500;
+      const t0 = performance.now();
+      (function step(t) {
+        const k = Math.min(1, (t - t0) / dur);
+        const e = 1 - Math.pow(1 - k, 3);
+        el.textContent = Math.round(from + (to - from) * e).toLocaleString('ru-RU');
+        if (k < 1) requestAnimationFrame(step);
+      })(t0);
+    }
+
+    const cntIo = new IntersectionObserver(entries => {
+      entries.forEach(en => {
+        if (en.isIntersecting) {
+          animCount(en.target);
+          cntIo.unobserve(en.target);
+        }
+      });
+    }, { threshold: 0.6 });
+    document.querySelectorAll('.stat__num[data-to]').forEach(el => cntIo.observe(el));
   </script>
 
 </body>
