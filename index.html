@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://files.catbox.moe; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="no-referrer">
+  <meta name="description" content="хартвеллиха. сестра хартвелла.">
+  <meta name="theme-color" content="#0a0708">
+  <meta property="og:title" content="хартвеллиха">
+  <meta property="og:description" content="alt till death">
+  <meta property="og:image" content="https://files.catbox.moe/tv68zx.jpg">
+  <title>хартвеллиха</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🖤</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Unbounded:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <noscript><style>.reveal{opacity:1;transform:none}.caret{display:none}</style></noscript>
+</head>
+<body>
+
+  <div class="progress" id="progress" aria-hidden="true"></div>
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursor-ring" aria-hidden="true"></div>
+
+  <div class="grid-bg" aria-hidden="true"></div>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="scanlines" aria-hidden="true"></div>
+  <div class="glow glow--tl" aria-hidden="true"></div>
+  <div class="glow glow--br" aria-hidden="true"></div>
+  <div class="glow glow--mid" aria-hidden="true"></div>
+
+  <header class="top">
+    <a href="#" class="logo">хартвеллиха<span class="logo-dot">.</span></a>
+    <div class="top__right">
+      <nav class="nav">
+        <a href="#terminal">терминал</a>
+        <a href="#about">я</a>
+        <a href="#langs">языки</a>
+      </nav>
+      <span class="clock" id="clock">00:00:00</span>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="hero__left reveal">
+        <p class="hero__tag"><span class="blink">▮</span> <span class="ok">online</span> · не сплю · существую</p>
+        <h1 class="glitch" data-text="хартвеллиха">хартвеллиха</h1>
+        <p class="hero__sub"><span id="typed"></span><span class="caret"></span></p>
+        <p class="hero__desc">
+          кодер из вредности. c++ python c# и прочая дичь.
+          иногда пишу нормально. чаще нет.
+        </p>
+        <div class="hero__chips">
+          <span class="chip">alt till death</span>
+          <span class="chip chip--dim">не трогай</span>
+        </div>
+      </div>
+
+      <div class="hero__right reveal reveal--d1">
+        <div class="avatar-wrap">
+          <img
+            src="https://files.catbox.moe/tv68zx.jpg"
+            alt="хартвеллиха"
+            class="avatar"
+            width="300"
+            height="300"
+            loading="eager"
+          >
+          <div class="avatar-frame" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+          <div class="avatar-scan" aria-hidden="true"></div>
+          <div class="avatar-badge">
+            <span class="pulse"></span>
+            alive
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker__track">
+        <span>C++</span><span>◆</span><span>Python</span><span>◆</span><span>C#</span><span>◆</span>
+        <span>хартвеллиха</span><span>◆</span><span>alt</span><span>◆</span><span>bash</span><span>◆</span>
+        <span>SQL</span><span>◆</span><span>git</span><span>◆</span><span>не трогай</span><span>◆</span>
+        <span>C++</span><span>◆</span><span>Python</span><span>◆</span><span>C#</span><span>◆</span>
+        <span>хартвеллиха</span><span>◆</span><span>alt</span><span>◆</span><span>bash</span><span>◆</span>
+        <span>SQL</span><span>◆</span><span>git</span><span>◆</span><span>не трогай</span><span>◆</span>
+      </div>
+    </div>
+
+    <section id="terminal" class="section">
+      <div class="section-head reveal">
+        <span class="section-eyebrow">ssh хартвеллиха@github</span>
+        <h2 class="section-title">терминал</h2>
+      </div>
+
+      <div class="win term reveal">
+        <div class="win__bar">
+          <span class="win__dot win__dot--r"></span>
+          <span class="win__dot win__dot--y"></span>
+          <span class="win__dot win__dot--g"></span>
+          <span class="win__title">хартвеллиха@github: ~</span>
+        </div>
+        <div class="term__body" id="term-body">
+          <div class="term__out" id="term-out" aria-live="polite"></div>
+          <div class="term__inputline">
+            <span class="t-prompt">хартвеллиха@github:~$</span>
+            <input type="text" class="term__input" id="term-input" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="терминал" maxlength="60">
+          </div>
+          <p class="term__hint">подсказка: help. или не пиши ничего, мне всё равно</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="section-head reveal">
+        <span class="section-eyebrow">cat about.cpp</span>
+        <h2 class="section-title">обо мне</h2>
+      </div>
+
+      <div class="win code reveal">
+        <div class="win__bar">
+          <span class="win__dot win__dot--r"></span>
+          <span class="win__dot win__dot--y"></span>
+          <span class="win__dot win__dot--g"></span>
+          <span class="win__title">about.cpp — хартвеллиха</span>
+        </div>
+        <div class="code__body">
+<span class="code-line"><span class="k">struct</span> хартвеллиха <span class="p">{</span></span>
+<span class="code-line">    <span class="k">string</span> статус   <span class="p">=</span> <span class="s">"существую из вредности"</span><span class="p">;</span></span>
+<span class="code-line">    <span class="k">string</span> рождение <span class="p">=</span> <span class="s">"3 ночи, дрель, чей-то плач"</span><span class="p">;</span></span>
+<span class="code-line">    <span class="k">string</span> учёба    <span class="p">=</span> <span class="s">"на кого-то"</span><span class="p">;</span></span>
+<span class="code-line">    <span class="k">string</span> работа   <span class="p">=</span> <span class="s">"никем"</span><span class="p">;</span></span>
+<span class="code-line">    <span class="k">string</span> брат     <span class="p">=</span> <span class="s">"говорит что я проблема"</span><span class="p">;</span></span>
+<span class="code-line">    <span class="k">string</span> правда   <span class="p">=</span> <span class="s">"он просто завидует"</span><span class="p">;</span></span>
+<span class="code-line">    <span class="k">int</span>    сон      <span class="p">=</span> <span class="n">0</span><span class="p">;</span></span>
+<span class="code-line">    <span class="k">bool</span>   совесть  <span class="p">=</span> <span class="k">false</span><span class="p">;</span></span>
+<span class="code-line"> </span>
+<span class="code-line">    <span class="k">string</span> <span class="f">ответить</span><span class="p">(</span><span class="k">string</span> ты<span class="p">) {</span></span>
+<span class="code-line">        <span class="k">if</span> <span class="p">(</span>ты <span class="p">==</span> <span class="s">"заблудился"</span><span class="p">)</span> <span class="k">return</span> <span class="s">"бывает"</span><span class="p">;</span></span>
+<span class="code-line">        <span class="k">return</span> <span class="s">"значит мазохист. уважаю"</span><span class="p">;</span></span>
+<span class="code-line">    <span class="p">}</span></span>
+<span class="code-line"><span class="p">};</span></span>
+        </div>
+      </div>
+
+      <div class="about-tags reveal reveal--d1">
+        <span>🖤 alt till death</span>
+        <span>💀 не трогай меня</span>
+        <span>🤡 ты уже тронул</span>
+      </div>
+    </section>
+
+    <section id="langs" class="section">
+      <div class="section-head reveal">
+        <span class="section-eyebrow">ls языки/</span>
+        <h2 class="section-title">языки</h2>
+      </div>
+
+      <div class="lang-grid">
+
+        <article class="lang-panel lang-panel--cpp reveal">
+          <div class="lang-panel__bg">++</div>
+          <div class="lang-panel__content">
+            <span class="lang-panel__label">основа</span>
+            <h3 class="lang-panel__name">C++</h3>
+            <p class="lang-panel__desc">память, боль, скорость</p>
+            <div class="lvl"><div class="lvl__bar"><i style="--w:87%"></i></div><span class="lvl__txt">боль 87%</span></div>
+          </div>
+        </article>
+
+        <article class="lang-panel lang-panel--py reveal reveal--d1">
+          <div class="lang-panel__bg">py</div>
+          <div class="lang-panel__content">
+            <span class="lang-panel__label">лень</span>
+            <h3 class="lang-panel__name">Python</h3>
+            <p class="lang-panel__desc">быстро и грязно</p>
+            <div class="lvl"><div class="lvl__bar"><i style="--w:95%"></i></div><span class="lvl__txt">лень 95%</span></div>
+          </div>
+        </article>
+
+        <article class="lang-panel lang-panel--cs reveal reveal--d2">
+          <div class="lang-panel__bg">C#</div>
+          <div class="lang-panel__content">
+            <span class="lang-panel__label">gui</span>
+            <h3 class="lang-panel__name">C#</h3>
+            <p class="lang-panel__desc">кнопки без страданий</p>
+            <div class="lvl"><div class="lvl__bar"><i style="--w:72%"></i></div><span class="lvl__txt">кнопки 72%</span></div>
+          </div>
+        </article>
+
+        <article class="lang-panel lang-panel--bash reveal">
+          <div class="lang-panel__bg">$_</div>
+          <div class="lang-panel__content">
+            <span class="lang-panel__label">shell</span>
+            <h3 class="lang-panel__name">bash</h3>
+            <p class="lang-panel__desc">одна строка решает</p>
+            <div class="lvl"><div class="lvl__bar"><i style="--w:80%"></i></div><span class="lvl__txt">пайпы 80%</span></div>
+          </div>
+        </article>
+
+        <article class="lang-panel lang-panel--sql reveal reveal--d1">
+          <div class="lang-panel__bg">SQL</div>
+          <div class="lang-panel__content">
+            <span class="lang-panel__label">data</span>
+            <h3 class="lang-panel__name">SQL</h3>
+            <p class="lang-panel__desc">select * from хаос</p>
+            <div class="lvl"><div class="lvl__bar"><i style="--w:75%"></i></div><span class="lvl__txt">джойны 75%</span></div>
+          </div>
+        </article>
+
+        <article class="lang-panel lang-panel--web reveal reveal--d2">
+          <div class="lang-panel__bg">&lt;/&gt;</div>
+          <div class="lang-panel__content">
+            <span class="lang-panel__label">web</span>
+            <h3 class="lang-panel__name">HTML/CSS</h3>
+            <p class="lang-panel__desc">когда надо красиво</p>
+            <div class="lvl"><div class="lvl__bar"><i style="--w:99%"></i></div><span class="lvl__txt">вкус 99%</span></div>
+          </div>
+        </article>
+
+        <article class="lang-panel lang-panel--git lang-panel--wide reveal">
+          <div class="lang-panel__bg">git</div>
+          <div class="lang-panel__content">
+            <span class="lang-panel__label">версии</span>
+            <h3 class="lang-panel__name">git</h3>
+            <p class="lang-panel__desc">commit. push. молиться.</p>
+            <div class="lvl"><div class="lvl__bar"><i style="--w:100%"></i></div><span class="lvl__txt">молитвы 100%</span></div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head reveal">
+        <span class="section-eyebrow">uptime --human</span>
+        <h2 class="section-title">статистика</h2>
+      </div>
+
+      <div class="stats">
+        <div class="stat reveal">
+          <span class="stat__num" data-to="128640">0</span>
+          <span class="stat__label">строк написано</span>
+        </div>
+        <div class="stat reveal reveal--d1">
+          <span class="stat__num" data-to="131072">0</span>
+          <span class="stat__label">строк удалено</span>
+        </div>
+        <div class="stat reveal reveal--d1">
+          <span class="stat__num" data-from="8" data-to="0">8</span>
+          <span class="stat__label">часов сна сегодня</span>
+        </div>
+        <div class="stat reveal reveal--d2">
+          <span class="stat__num stat__num--vio">∞</span>
+          <span class="stat__label">багов создано</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <span>© 2026 хартвеллиха · сделано из вредности</span>
+    <span>build <b>0x29A</b> · branch: main · tests: 0/0 passed</span>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
